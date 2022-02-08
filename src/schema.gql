@@ -1,0 +1,45 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  id: ID!
+  nome: String!
+  email: String!
+}
+
+type Booklist {
+  id: ID!
+  nome: String!
+  numeroDeLivros: Float!
+  descricao: String
+}
+
+type Query {
+  users: [User!]!
+  user(id: String!): User!
+  booklists: [Booklist!]!
+}
+
+type Mutation {
+  updateUser(data: UpdateUserInput!, id: String!): User!
+  deleteUser(id: String!): Boolean!
+  createUser(data: CreateUserInput!): User!
+  createBooklist(data: CreateBooklistInput!): Booklist!
+}
+
+input UpdateUserInput {
+  nome: String
+  email: String
+}
+
+input CreateUserInput {
+  nome: String!
+  email: String!
+}
+
+input CreateBooklistInput {
+  nome: String!
+  numeroDeLivros: Float!
+  descricao: String
+}
